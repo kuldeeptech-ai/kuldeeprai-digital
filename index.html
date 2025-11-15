@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuldeep Rai Digital Services</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0c2149;
+      --primary-light: #183b82;
+      --accent: #3b82f6;
+      --bg: #f2f4f8;
+      --card-bg: #ffffff;
+      --text-dark: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+    }
+
+    /* HEADER & NAVBAR */
+    header {
+      background: radial-gradient(circle at top left, #1d4ed8, #020617);
+      color: #fff;
+      padding: 18px 20px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.35);
+      top: -120px;
+      right: -80px;
+      filter: blur(2px);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img.logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.5);
+      box-shadow: 0 4px 10px rgba(15,23,42,0.6);
+      animation: floatLogo 4s ease-in-out infinite;
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    .contact-mini {
+      text-align: right;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .contact-mini strong {
+      font-size: 13px;
+      display: block;
+    }
+
+    nav {
+      margin-top: 14px;
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 8px;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 3px;
+      transition: 0.25s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg,#38bdf8,#a855f7);
+      transition: width 0.25s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 28px;
+      align-items: center;
+      margin-top: 26px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h2 {
+      font-size: 30px;
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .hero-tags span {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(148,163,184,0.6);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg,#3b82f6,#06b6d4);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(37,99,235,0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 10px 24px rgba(37,99,235,0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.7);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15,23,42,0.8);
+    }
+
+    .hero-banner {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(15,23,42,0.8);
+      border: 1px solid rgba(148,163,184,0.5);
+      transform: translateY(0);
+      animation: floatBanner 6s ease-in-out infinite;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* MAIN LAYOUT */
+    main {
+      padding: 40px 16px 60px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 6px;
+      font-size: 26px;
+      color: var(--primary);
+    }
+
+    .section-heading p {
+      margin: 0;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.10);
+      border: 1px solid rgba(148,163,184,0.4);
+      position: relative;
+      overflow: hidden;
+      transform: translateY(12px);
+      opacity: 0;
+      transition: 0.5s ease;
+    }
+
+    .service-card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top left,#3b82f6,#0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      margin: 4px 0 6px;
+      font-size: 16px;
+    }
+
+    .service-card p {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .service-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.08);
+      color: #16a34a;
+    }
+
+    /* SERVICE ILLUSTRATION STRIP */
+    .services-illustration {
+      margin-top: 32px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.18);
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .services-illustration img {
+      width: 100%;
+      display: block;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(15,23,42,0.18);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 6px 11px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.8);
+      color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.8);
+    }
+
+    /* CONTACT + MAP SECTION */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 22px 20px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.18);
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .contact-card p.small {
+      margin: 0 0 14px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 11px 12px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s, transform 0.1s;
+      font-family: inherit;
+      background: #f9fafb;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .btn-submit {
+      margin-top: 12px;
+      width: 100%;
+      border-radius: 999px;
+      padding: 11px 16px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg,#22c55e,#16a34a);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(22,163,74,0.4);
+      transition: 0.25s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 10px 24px rgba(22,163,74,0.6);
+    }
+
+    .contact-details {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .contact-details strong {
+      color: var(--primary);
+    }
+
+    .map-card {
+      background: var(--card-bg);
+      padding: 10px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.18);
+      border: 1px solid rgba(148,163,184,0.5);
+      overflow: hidden;
+    }
+
+    .map-card iframe {
+      border: 0;
+      width: 100%;
+      height: 320px;
+      border-radius: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      padding: 18px 12px 22px;
+      text-align: center;
+      font-size: 12px;
+      border-top: 1px solid rgba(148,163,184,0.35);
+    }
+
+    footer span {
+      color: #e5e7eb;
+    }
+
+    /* SCROLL TO TOP BUTTON */
+    #scrollTopBtn {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: radial-gradient(circle at top left,#3b82f6,#0f172a);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(15,23,42,0.6);
+      z-index: 60;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    #scrollTopBtn.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #scrollTopBtn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ANIMATIONS */
+    @keyframes floatLogo {
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-4px); }
+    }
+
+    @keyframes floatBanner {
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-6px); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-banner {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact-mini {
+        text-align: left;
+      }
+      nav {
+        border-radius: 18px;
+        padding-inline: 10px;
+      }
+      .hero-text h2 {
+        font-size: 24px;
+      }
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar">
+      <div class="brand">
+        <!-- yahan apna logo rakho: assets/logo.png -->
+        <img src="assets/logo.png" alt="Kuldeep Rai Digital Services Logo" class="logo">
+        <div class="brand-text">
+          <h1>Kuldeep Rai Digital Services</h1>
+          <span>Baurbyas, Mehdawal, S.K. Nagar – 272154</span>
+        </div>
+      </div>
+      <div class="contact-mini">
+        <strong>Helpline: +91 9555158536</strong>
+        <span>Email: kuldeeprai75220@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#map">Location</a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-text">
+        <h2>Fast, Trusted &amp; Hassle-Free Digital Seva</h2>
+        <p>
+          Sabhi government &amp; online forms ek hi jagah. Scholarship, old-age pension, PM Samman Nidhi
+          aur bahut kuch – sab ka kaam sahi tareeke se, time par.
+        </p>
+
+        <div class="hero-tags">
+          <span>Online Form Fill-up</span>
+          <span>Scholarship (Fresh / Renewal)</span>
+          <span>Old-Age Pension</span>
+          <span>PM Samman Nidhi</span>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            📞 Abhi Contact Karein
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            👀 Saare Services Dekhein
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-banner">
+        <!-- yahan wide banner rakho: assets/banner.png -->
+        <img src="assets/banner.png" alt="Digital Services Banner">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SERVICES SECTION -->
+    <section id="services">
+      <div class="section-heading">
+        <h2>Hamare Digital Services</h2>
+        <p>Roz-marra ke sabhi online kaam ek hi counter par.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-icon">📄</div>
+          <h3>Online Form Fill-up</h3>
+          <p>Scholarship, exam, yojana, admission, registration – har tarah ke government &amp; private online forms.</p>
+          <div class="service-badge">✔️ Form check karke submit</div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon">🎓</div>
+          <h3>Scholarship Service</h3>
+          <p>UP / National scholarship, fresh &amp; renewal, document upload, correction support aur status tracking.</p>
+          <div class="service-badge">📌 Student special help</div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon">👴</div>
+          <h3>Old-Age Pension</h3>
+          <p>Vriddha pension, vidhwa pension, divyang pension – online registration, update aur verification support.</p>
+          <div class="service-badge">🤝 Respect &amp; priority</div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon">🌾</div>
+          <h3>PM Kisan / Samman Nidhi</h3>
+          <p>Kisan registration, e-KYC, land record mapping, status check aur installment related madad.</p>
+          <div class="service-badge">🌱 Kisan friendly desk</div>
+        </article>
+      </div>
+
+      <!-- Illustration (4 service cards wali image) -->
+      <div class="services-illustration" style="margin-top:26px;">
+        <!-- yahan 4-cards wali image lagao: assets/services-main.png -->
+        <img src="assets/services-main.png" alt="Services Illustration">
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" style="margin-top:60px;">
+      <div class="section-heading">
+        <h2>Gallery &amp; Visuals</h2>
+        <p>Shop banner, service icons aur branding visuals ek jagah.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <!-- 4 service boxes wala illustration -->
+          <img src="assets/services-main.png" alt="Service Highlights">
+          <span class="gallery-label">Main Services</span>
+        </div>
+
+        <div class="gallery-item">
+          <!-- icons set 1 -->
+          <img src="assets/icons-set-1.png" alt="Digital Icons">
+          <span class="gallery-label">Digital Icons</span>
+        </div>
+
+        <div class="gallery-item">
+          <!-- icons set 2 / hover neon style -->
+          <img src="assets/icons-set-2.png" alt="Neon Icons">
+          <span class="gallery-label">Highlight Icons</span>
+        </div>
+
+        <div class="gallery-item">
+          <!-- hero banner ko bhi gallery me dikhaya -->
+          <img src="assets/banner.png" alt="Shop Banner">
+          <span class="gallery-label">Shop Banner</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT + MAP SECTION -->
+    <section id="contact" style="margin-top:60px;">
+      <div class="section-heading">
+        <h2>Contact &amp; Location</h2>
+        <p>Form bharwane se pehle phone ya WhatsApp par confirm kar sakte hain.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- CONTACT FORM -->
+        <div class="contact-card">
+          <h3>Quick Contact Form</h3>
+          <p class="small">Yeh form simple HTML hai. GitHub par host karne ke baad aap isse Google Form ya kisi backend se connect kar sakte hain.</p>
+
+          <form onsubmit="handleForm(event)">
+            <input type="text" name="name" placeholder="Aapka Naam" required>
+            <input type="tel" name="phone" placeholder="Mobile Number" required>
+            <input type="text" name="service" placeholder="Kaun sa kaam hai? (Scholarship, Pension...)" required>
+            <textarea name="message" placeholder="Extra details (optional)"></textarea>
+            <button type="submit" class="btn-submit">Form Submit (Demo)</button>
+          </form>
+
+          <div class="contact-details">
+            <p><strong>Mobile:</strong> +91 9555158536</p>
+            <p><strong>Email:</strong> kuldeeprai75220@gmail.com</p>
+            <p><strong>Address:</strong> Baurbyas, Mehdawal, S.K. Nagar – 272154</p>
+            <p><strong>Timing:</strong> 9:00 AM – 7:00 PM (All Days, as per need)</p>
+          </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="map-card" id="map">
+          <!-- yahan apna exact Google Maps iframe paste kar sakte ho -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb="
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scrollTopBtn" aria-label="Scroll to top" title="Top">
+    ↑
+  </button>
+
+  <!-- SIMPLE JS FOR ANIMATION & SCROLL -->
+  <script>
+    // Scroll-to-top button show/hide
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 260) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Reveal animation for service cards
+    const revealEls = document.querySelectorAll('.service-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // Demo form submit
+    function handleForm(e) {
+      e.preventDefault();
+      alert("Form demo ke liye hai.\nGitHub par host karne ke baad ise Google Form / WhatsApp link se connect kiya ja sakta hai.");
+      e.target.reset();
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span>2025</span> Kuldeep Rai Digital Services · All Rights Reserved
+  </footer>
+</body>
+</html>
