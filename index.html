@@ -709,32 +709,53 @@
 
     <!-- CONTACT + MAP SECTION -->
     <section id="contact" style="margin-top:60px;">
-      <div class="section-heading">
-        <h2>Contact &amp; Location</h2>
-        <p>Form bharwane se pehle phone ya WhatsApp par confirm kar sakte hain.</p>
+  <div class="section-heading">
+    <h2>Contact &amp; Location</h2>
+    <p>Form bharwane se pehle WhatsApp par confirm kar sakte hain.</p>
+  </div>
+
+  <div class="contact-wrapper">
+
+    <!-- CONTACT FORM (WHATSAPP AUTO MESSAGE) -->
+    <div class="contact-card">
+      <h3>Quick WhatsApp Form</h3>
+      <p class="small">Yeh form submit hote hi aapke WhatsApp par message bhej dega.</p>
+
+      <form id="whatsappForm">
+        <input type="text" id="name" placeholder="Aapka Naam" required>
+        <input type="tel" id="phone" placeholder="Mobile Number" required>
+        <input type="text" id="service" placeholder="Kaun sa kaam hai? (Scholarship, Pension...)" required>
+        <textarea id="message" placeholder="Extra Details (optional)" rows="4"></textarea>
+
+        <button type="submit" class="btn-submit">WhatsApp Par Send Karein</button>
+      </form>
+
+      <div class="contact-details">
+        <p><strong>Mobile:</strong> +91 9555158536</p>
+        <p><strong>Email:</strong> kuldeeprai75220@gmail.com</p>
+        <p><strong>Address:</strong> Baurbyas, Mehdawal, S.K. Nagar – 272154</p>
       </div>
+    </div>
 
-      <div class="contact-wrapper">
-        <!-- CONTACT FORM -->
-        <div class="contact-card">
-          <h3>Quick Contact Form</h3>
-          <p class="small">Yeh form simple HTML hai. GitHub par host karne ke baad aap isse Google Form ya kisi backend se connect kar sakte hain.</p>
+    <script>
+      document.getElementById("whatsappForm").addEventListener("submit", function(e){
+        e.preventDefault();
 
-          <form onsubmit="handleForm(event)">
-            <input type="text" name="name" placeholder="Aapka Naam" required>
-            <input type="tel" name="phone" placeholder="Mobile Number" required>
-            <input type="text" name="service" placeholder="Kaun sa kaam hai? (Scholarship, Pension...)" required>
-            <textarea name="message" placeholder="Extra details (optional)"></textarea>
-            <button type="submit" class="btn-submit">Form Submit (Demo)</button>
-          </form>
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let service = document.getElementById("service").value;
+        let message = document.getElementById("message").value;
 
-          <div class="contact-details">
-            <p><strong>Mobile:</strong> +91 9555158536</p>
-            <p><strong>Email:</strong> kuldeeprai75220@gmail.com</p>
-            <p><strong>Address:</strong> Baurbyas, Mehdawal, S.K. Nagar – 272154</p>
-            <p><strong>Timing:</strong> 9:00 AM – 7:00 PM (All Days, as per need)</p>
-          </div>
-        </div>
+        let whatsappMessage = 
+          "New Contact Form Message:%0A%0A" +
+          "👤 Naam: " + name + "%0A" +
+          "📞 Mobile: " + phone + "%0A" +
+          "📝 Kaam: " + service + "%0A" +
+          "✉ Message: " + message;
+
+        window.open("https://wa.me/919555158536?text=" + whatsappMessage, "_blank");
+      });
+    </script>
 
         <!-- MAP -->
         <div class="map-card" id="map">
