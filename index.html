@@ -579,63 +579,6 @@
         grid-template-columns: 1fr;
       }
     }
-   /* ICON DROPDOWN */
-.icon-dropdown {
-  width: 100%;
-  position: relative;
-  margin-top: 12px;
-}
-
-.dropdown-selected {
-  background: #f9fafb;
-  border: 1px solid #d1d5db;
-  padding: 12px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: 0.25s;
-  font-size: 15px;
-}
-
-.dropdown-selected:hover {
-  background: #fff;
-}
-
-.dropdown-list {
-  display: none;
-  position: absolute;
-  width: 100%;
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  margin-top: 4px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-  z-index: 999;
-}
-
-.dropdown-item {
-  padding: 12px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.25s;
-}
-
-.dropdown-item:hover {
-  background: #eef3ff;
-}
-
-/* Other service input */
-#otherService {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background: #f9fafb;
-  font-size: 14px;
-}
   </style>
  
 </head>
@@ -779,57 +722,6 @@
       </div>
     </section>
 
-<form id="contactForm" onsubmit="handleForm(event)">
-  
-  <input type="text" id="name" placeholder="Aapka Naam" required>
-  <input type="tel" id="phone" placeholder="Mobile Number" required>
-
-  <!-- ICON DROPDOWN (emoji-based) -->
-  <div class="icon-dropdown">
-    <div class="dropdown-selected" id="selectedService">
-      <span id="selectedEmoji">📋</span>
-      <span id="selectedText">Kaam select kare</span>
-    </div>
-
-    <div class="dropdown-list" id="serviceList">
-      <div class="dropdown-item" data-value="Online Form Fill-up" data-emoji="📝">
-        <span>📝 Online Form Fill-up</span>
-      </div>
-
-      <div class="dropdown-item" data-value="Scholarship Form" data-emoji="🎓">
-        <span>🎓 Scholarship Form</span>
-      </div>
-
-      <div class="dropdown-item" data-value="Old-age Pension" data-emoji="👴">
-        <span>👴 Old-age Pension</span>
-      </div>
-
-      <div class="dropdown-item" data-value="PM Kisan Samman Nidhi" data-emoji="🌾">
-        <span>🌾 PM Kisan Samman Nidhi</span>
-      </div>
-
-      <div class="dropdown-item" data-value="Aadhaar / KYC Work" data-emoji="🆔">
-        <span>🆔 Aadhaar / KYC Work</span>
-      </div>
-
-      <div class="dropdown-item" data-value="PAN Card / Bank Work" data-emoji="💳">
-        <span>💳 PAN Card / Bank Work</span>
-      </div>
-
-      <div class="dropdown-item" data-value="Other Service" data-emoji="➕">
-        <span>➕ Other Service</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- OTHER SERVICE INPUT -->
-  <input type="text" id="otherService" placeholder="Other service ka naam likhen" style="display:none;">
-
-  <textarea id="message" placeholder="Extra details (optional)" rows="4"></textarea>
-
-  <button type="submit" class="btn-submit">WhatsApp par bheje</button>
-
-</form>
         <!-- MAP -->
         <div class="map-card" id="map">
           <!-- yahan apna exact Google Maps iframe paste kar sakte ho -->
@@ -884,78 +776,6 @@
       alert("Form demo ke liye hai.\nGitHub par host karne ke baad ise Google Form / WhatsApp link se connect kiya ja sakta hai.");
       e.target.reset();
     }
-  <script>
-  const dropdownSelected = document.getElementById("selectedService");
-  const dropdownList = document.getElementById("serviceList");
-  const otherService = document.getElementById("otherService");
-  const selectedEmoji = document.getElementById("selectedEmoji");
-  const selectedText = document.getElementById("selectedText");
-
-  const hiddenServiceValue = { value: "" };
-
-  dropdownSelected.addEventListener("click", () => {
-    dropdownList.style.display =
-      dropdownList.style.display === "block" ? "none" : "block";
-  });
-
-  document.querySelectorAll(".dropdown-item").forEach(item => {
-    item.addEventListener("click", () => {
-      const service = item.dataset.value;
-      const emoji = item.dataset.emoji;
-
-      hiddenServiceValue.value = service;
-      selectedEmoji.innerText = emoji;
-      selectedText.innerText = service;
-
-      dropdownList.style.display = "none";
-
-      if (service === "Other Service") {
-        otherService.style.display = "block";
-      } else {
-        otherService.style.display = "none";
-        otherService.value = "";
-      }
-    });
-  });
-
-  function handleForm(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const extra = document.getElementById("message").value.trim();
-
-    let service = hiddenServiceValue.value;
-
-    if (service === "Other Service") {
-      service = otherService.value.trim() || "Other Service";
-    }
-
-    const ownerNumber = "919555158536";
-
-    const text =
-      "Namaste,\n" +
-      "👤 Mera naam: " + name + "\n" +
-      "📞 Mobile: " + phone + "\n" +
-      "📝 Kaam: " + service + "\n" +
-      "✉ Extra details: " + (extra || "-");
-
-    const url = "https://wa.me/" + ownerNumber + "?text=" + encodeURIComponent(text);
-
-    window.open(url, "_blank");
-
-    event.target.reset();
-    selectedEmoji.innerText = "📋";
-    selectedText.innerText = "Kaam select kare";
-    otherService.style.display = "none";
-  }
-
-  // Close dropdown if clicked outside
-  window.addEventListener("click", function(e) {
-    if (!dropdownSelected.contains(e.target)) {
-      dropdownList.style.display = "none";
-    }
-  });
-</script>
+  
 </body>
 </html>
