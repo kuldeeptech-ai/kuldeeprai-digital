@@ -721,56 +721,30 @@
       </div>
     </section>
 
-    <!-- CONTACT + MAP SECTION -->
-    <section id="contact" style="margin-top:60px;">
-  <div class="section-heading">
-    <h2>Contact &amp; Location</h2>
-    <p>Form bharwane se pehle WhatsApp par confirm kar sakte hain.</p>
-  </div>
+<form id="contactForm" onsubmit="handleForm(event)">
+  <input type="text" name="name" id="name" placeholder="Aapka Naam" required>
 
-  <div class="contact-wrapper">
+  <input type="tel" name="phone" id="phone" placeholder="Mobile Number" required>
 
-    <!-- CONTACT FORM (WHATSAPP AUTO MESSAGE) -->
-    <div class="contact-card">
-      <h3>Quick WhatsApp Form</h3>
-      <p class="small">Yeh form submit hote hi aapke WhatsApp par message bhej dega.</p>
+  <!-- SERVICE SELECT MENU -->
+  <select name="service" id="serviceSelect" required>
+    <option value="">Kaam select kare</option>
+    <option value="Online Form Fill-up">Online Form Fill-up</option>
+    <option value="Scholarship Form">Scholarship Form</option>
+    <option value="Old-age Pension">Old-age Pension</option>
+    <option value="PM Kisan Samman Nidhi">PM Kisan Samman Nidhi</option>
+    <option value="Aadhaar / KYC Work">Aadhaar / KYC Work</option>
+    <option value="PAN Card / Bank Work">PAN Card / Bank Work</option>
+    <option value="Other Service">Other Service</option>
+  </select>
 
-      <form id="whatsappForm">
-        <input type="text" id="name" placeholder="Aapka Naam" required>
-        <input type="tel" id="phone" placeholder="Mobile Number" required>
-        <input type="text" id="service" placeholder="Kaun sa kaam hai? (Scholarship, Pension...)" required>
-        <textarea id="message" placeholder="Extra Details (optional)" rows="4"></textarea>
+  <!-- OTHER SERVICE TEXTBOX (hidden by default) -->
+  <input type="text" name="otherService" id="otherService" placeholder="Service ka naam likhe" style="display:none;">
 
-        <button type="submit" class="btn-submit">WhatsApp Par Send Karein</button>
-      </form>
+  <textarea name="message" id="message" placeholder="Extra details (optional)" rows="4"></textarea>
 
-      <div class="contact-details">
-        <p><strong>Mobile:</strong> +91 9555158536</p>
-        <p><strong>Email:</strong> kuldeeprai75220@gmail.com</p>
-        <p><strong>Address:</strong> Baurbyas, Mehdawal, S.K. Nagar – 272154</p>
-      </div>
-    </div>
-
-    <script>
-      document.getElementById("whatsappForm").addEventListener("submit", function(e){
-        e.preventDefault();
-
-        let name = document.getElementById("name").value;
-        let phone = document.getElementById("phone").value;
-        let service = document.getElementById("service").value;
-        let message = document.getElementById("message").value;
-
-        let whatsappMessage = 
-          "New Contact Form Message:%0A%0A" +
-          "👤 Naam: " + name + "%0A" +
-          "📞 Mobile: " + phone + "%0A" +
-          "📝 Kaam: " + service + "%0A" +
-          "✉ Message: " + message;
-
-        window.open("https://wa.me/919555158536?text=" + whatsappMessage, "_blank");
-      });
-    </script>
-
+  <button type="submit" class="btn-submit">WhatsApp par bheje</button>
+</form>
         <!-- MAP -->
         <div class="map-card" id="map">
           <!-- yahan apna exact Google Maps iframe paste kar sakte ho -->
@@ -831,5 +805,55 @@
   <footer>
     © <span>2025</span> Kuldeep Rai Digital Services · All Rights Reserved
   </footer>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const serviceSelect = document.getElementById("serviceSelect");
+    const otherServiceInput = document.getElementById("otherService");
+
+    // Show/Hide Other Service input
+    serviceSelect.addEventListener("change", function () {
+      if (this.value === "Other Service") {
+        otherServiceInput.style.display = "block";
+      } else {
+        otherServiceInput.style.display = "none";
+        otherServiceInput.value = "";
+      }
+    });
+  });
+
+  function handleForm(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const serviceSelect = document.getElementById("serviceSelect");
+    let service = serviceSelect.value;
+    const otherServiceInput = document.getElementById("otherService");
+    const extraMessage = document.getElementById("message").value.trim();
+
+    // If user chose "Other Service"
+    if (service === "Other Service") {
+      service = otherServiceInput.value.trim() || "Other Service";
+    }
+
+    // Your WhatsApp number
+    const ownerNumber = "919555158536";
+
+    // Natural human-like message
+    const text =
+      "Namaste,\n" +
+      "👤 Mera naam: " + name + "\n" +
+      "📞 Mobile: " + phone + "\n" +
+      "📝 Kaam: " + service + "\n" +
+      "✉ Extra details: " + (extraMessage || "-");
+
+    const url = "https://wa.me/" + ownerNumber + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+
+    event.target.reset();
+    document.getElementById("otherService").style.display = "none";
+  }
+</script>
 </body>
 </html>
