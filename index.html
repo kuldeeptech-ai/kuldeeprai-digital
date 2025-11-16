@@ -1,781 +1,820 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
- <link rel="icon" type="image/png" href="https://img.jarmod.com/img/kTXul7BVdK.png">
-<link rel="shortcut icon" href="https://img.jarmod.com/img/kTXul7BVdK.png">
-<link rel="apple-touch-icon" href="https://img.jarmod.com/img/kTXul7BVdK.png">
-<meta name="theme-color" content="#0c2149"> 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kuldeep Rai Digital Services</title>
-<!-- SHARE PREVIEW (Open Graph + Twitter Card) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kuldeep Rai Digital Services">
-<meta property="og:description" content="Online Form, Scholarship, Pension, PM Kisan Samman Nidhi — Sabhi digital services ek hi jagah.">
-<meta property="og:image" content="https://img.jarmod.com/img/BPitTyUTrx.png">
-<meta property="og:url" content="https://kuldeeptech-ai.github.io/kuldeeprai-digital/">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kuldeep Rai Digital Services">
-<meta name="twitter:description" content="Fast & Trusted Digital Services — Online Form, Scholarship, Pension, PM Kisan.">
-<meta name="twitter:image" content="https://img.jarmod.com/img/BPitTyUTrx.png">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #0c2149;
-      --primary-light: #183b82;
-      --accent: #3b82f6;
-      --bg: #f2f4f8;
-      --card-bg: #ffffff;
-      --text-dark: #0f172a;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--text-dark);
-    }
-
-    /* HEADER & NAVBAR */
-    header {
-      background: radial-gradient(circle at top left, #1d4ed8, #020617);
-      color: #fff;
-      padding: 18px 20px 26px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(59,130,246,0.35);
-      top: -120px;
-      right: -80px;
-      filter: blur(2px);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand img.logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.5);
-      box-shadow: 0 4px 10px rgba(15,23,42,0.6);
-      animation: floatLogo 4s ease-in-out infinite;
-    }
-
-    .brand-text h1 {
-      font-size: 20px;
-      margin: 0;
-      font-weight: 700;
-    }
-
-    .brand-text span {
-      font-size: 12px;
-      opacity: 0.85;
-    }
-
-    .contact-mini {
-      text-align: right;
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
-    .contact-mini strong {
-      font-size: 13px;
-      display: block;
-    }
-
-    nav {
-      margin-top: 14px;
-      background: rgba(15,23,42,0.9);
-      border-radius: 999px;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 8px;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(148,163,184,0.4);
-    }
-
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 14px;
-      position: relative;
-      padding-bottom: 3px;
-      transition: 0.25s;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg,#38bdf8,#a855f7);
-      transition: width 0.25s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 28px;
-      align-items: center;
-      margin-top: 26px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-text h2 {
-      font-size: 30px;
-      margin: 0 0 10px;
-      font-weight: 700;
-    }
-
-    .hero-text p {
-      margin: 0 0 16px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .hero-tags span {
-      font-size: 11px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.7);
-      border: 1px solid rgba(148,163,184,0.6);
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .btn-primary,
-    .btn-ghost {
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg,#3b82f6,#06b6d4);
-      color: #fff;
-      box-shadow: 0 8px 18px rgba(37,99,235,0.5);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px) scale(1.02);
-      box-shadow: 0 10px 24px rgba(37,99,235,0.7);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: #e5e7eb;
-      border: 1px solid rgba(148,163,184,0.7);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15,23,42,0.8);
-    }
-
-    .hero-banner {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 10px 35px rgba(15,23,42,0.8);
-      border: 1px solid rgba(148,163,184,0.5);
-      transform: translateY(0);
-      animation: floatBanner 6s ease-in-out infinite;
-    }
-
-    .hero-banner img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* MAIN LAYOUT */
-    main {
-      padding: 40px 16px 60px;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 6px;
-      font-size: 26px;
-      color: var(--primary);
-    }
-
-    .section-heading p {
-      margin: 0;
-      font-size: 13px;
-      color: #6b7280;
-    }
-
-    /* SERVICES GRID */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(15,23,42,0.10);
-      border: 1px solid rgba(148,163,184,0.4);
-      position: relative;
-      overflow: hidden;
-      transform: translateY(12px);
-      opacity: 0;
-      transition: 0.5s ease;
-    }
-
-    .service-card.visible {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      background: radial-gradient(circle at top left,#3b82f6,#0f172a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .service-card h3 {
-      margin: 4px 0 6px;
-      font-size: 16px;
-    }
-
-    .service-card p {
-      margin: 0 0 10px;
-      font-size: 13px;
-      color: #6b7280;
-    }
-
-    .service-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34,197,94,0.08);
-      color: #16a34a;
-    }
-
-    /* SERVICE ILLUSTRATION STRIP */
-    .services-illustration {
-      margin-top: 32px;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(15,23,42,0.18);
-      border: 1px solid rgba(148,163,184,0.5);
-    }
-
-    .services-illustration img {
-      width: 100%;
-      display: block;
-    }
-
-    /* GALLERY */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-      gap: 18px;
-    }
-
-    .gallery-item {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(15,23,42,0.18);
-      position: relative;
-      isolation: isolate;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .gallery-label {
-      position: absolute;
-      left: 10px;
-      bottom: 10px;
-      padding: 6px 11px;
-      font-size: 11px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.8);
-      color: #e5e7eb;
-      border: 1px solid rgba(148,163,184,0.8);
-    }
-
-    /* CONTACT + MAP SECTION */
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
-      gap: 22px;
-      align-items: flex-start;
-    }
-
-    .contact-card {
-      background: var(--card-bg);
-      padding: 22px 20px 20px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(15,23,42,0.18);
-      border: 1px solid rgba(148,163,184,0.5);
-    }
-
-    .contact-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      color: var(--primary);
-    }
-
-    .contact-card p.small {
-      margin: 0 0 14px;
-      font-size: 12px;
-      color: #6b7280;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 11px 12px;
-      margin-top: 10px;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
-      font-size: 13px;
-      outline: none;
-      transition: border 0.2s, box-shadow 0.2s, transform 0.1s;
-      font-family: inherit;
-      background: #f9fafb;
-    }
-
-    form input:focus,
-    form textarea:focus {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
-      background: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    form textarea {
-      resize: vertical;
-      min-height: 90px;
-    }
-
-    .btn-submit {
-      margin-top: 12px;
-      width: 100%;
-      border-radius: 999px;
-      padding: 11px 16px;
-      border: none;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      background: linear-gradient(135deg,#22c55e,#16a34a);
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(22,163,74,0.4);
-      transition: 0.25s;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px) scale(1.01);
-      box-shadow: 0 10px 24px rgba(22,163,74,0.6);
-    }
-
-    .contact-details {
-      margin-top: 16px;
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    .contact-details strong {
-      color: var(--primary);
-    }
-
-    .map-card {
-      background: var(--card-bg);
-      padding: 10px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(15,23,42,0.18);
-      border: 1px solid rgba(148,163,184,0.5);
-      overflow: hidden;
-    }
-
-    .map-card iframe {
-      border: 0;
-      width: 100%;
-      height: 320px;
-      border-radius: 14px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #020617;
-      color: #9ca3af;
-      padding: 18px 12px 22px;
-      text-align: center;
-      font-size: 12px;
-      border-top: 1px solid rgba(148,163,184,0.35);
-    }
-
-    footer span {
-      color: #e5e7eb;
-    }
-
-    /* SCROLL TO TOP BUTTON */
-    #scrollTopBtn {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: none;
-      background: radial-gradient(circle at top left,#3b82f6,#0f172a);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(15,23,42,0.6);
-      z-index: 60;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s, transform 0.25s;
-    }
-
-    #scrollTopBtn.show {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    #scrollTopBtn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ANIMATIONS */
-    @keyframes floatLogo {
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-4px); }
-    }
-
-    @keyframes floatBanner {
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-6px); }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 840px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-banner {
-        order: -1;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .contact-mini {
-        text-align: left;
-      }
-      nav {
-        border-radius: 18px;
-        padding-inline: 10px;
-      }
-      .hero-text h2 {
-        font-size: 24px;
-      }
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
- 
+
+<meta charset="UTF-8" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<title>Kuldeep Rai Digital Services - Premium Dual Theme</title>
+
+<!-- Favicon -->
+<link rel="icon" href="https://img.jarmod.com/img/kTXul7BVdK.png" />
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ------------------------------------------------------
+   MOBILE → DESKTOP AUTO MODE (FOR SMALL DEVICES)
+-------------------------------------------------------*/
+
+@media (max-width: 340px) {
+  body {
+    zoom: 0.78;       /* small phones → auto desktop feel */
+    transform-origin: top;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 420px) {
+  body {
+    zoom: 0.90;
+    transform-origin: top;
+  }
+}
+
+
+/* ------------------------------------------------------
+   ROOT THEME VARIABLES
+-------------------------------------------------------*/
+
+/* DARK THEME DEFAULT */
+:root {
+  --bg: #0a0c0f;
+  --text: #eef1f5;
+  --sub: #9aa4b2;
+  --card: #11151a;
+  --border: #1e2329;
+  --accent: #3b82f6;
+  --accent-2: #60a5fa;
+  --glow: rgba(96,165,250,0.40);
+
+  --radius: 14px;
+  --speed: .35s;
+}
+
+/* LIGHT MODE */
+.light {
+  --bg: #f5f7fa;
+  --text: #0f172a;
+  --sub: #475569;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --accent: #2563eb;
+  --accent-2: #3b82f6;
+  --glow: rgba(37,99,235,0.35);
+}
+
+/* THEME TRANSITION */
+body, header, .card, .section, .hero, nav a, input, textarea {
+  transition: background var(--speed), color var(--speed),
+              border var(--speed), box-shadow var(--speed);
+}
+
+/* ------------------------------------------------------
+   GLOBAL BASE
+-------------------------------------------------------*/
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ------------------------------------------------------
+   HEADER + NAVIGATION
+-------------------------------------------------------*/
+
+/* FIXED RESPONSIVE HEADER */
+.header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text h1 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.brand-text p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--sub);
+}
+
+/* NAVIGATION FIX */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: var(--card);
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--sub);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* MOBILE FIX */
+@media (max-width: 460px) {
+  .brand-text h1 {
+    font-size: 15px;
+  }
+  .brand-text p {
+    font-size: 11px;
+  }
+  .logo {
+    width: 46px;
+    height: 46px;
+  }
+  .nav {
+    gap: 14px;
+  }
+}
+
+/* ------------------------------------------------------
+   iPHONE TOGGLE SWITCH
+-------------------------------------------------------*/
+
+.theme-toggle {
+  width: 60px;
+  height: 30px;
+  background: var(--border);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+}
+
+.theme-ball {
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  transition: .35s;
+  box-shadow: 0 0 14px var(--accent-2);
+}
+
+.light .theme-ball {
+  left: 33px;
+  background: #facc15;
+  box-shadow: 0 0 14px rgba(250,204,21,0.55);
+}
+
+/* ------------------------------------------------------
+   HERO SECTION
+-------------------------------------------------------*/
+
+.hero {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 34px;
+  font-family: "Rajdhani";
+  margin: 0;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--glow);
+}
+
+.hero p {
+  margin-top: 8px;
+  color: var(--sub);
+  font-size: 15px;
+}
+
+.hero img {
+  border-radius: var(--radius);
+  box-shadow: 0 0 24px var(--glow);
+}
+
+/* HERO RESPONSIVE */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------
+   SECTIONS
+-------------------------------------------------------*/
+
+.section {
+  padding: 40px 20px;
+}
+
+.section h2 {
+  font-family: "Rajdhani";
+  font-size: 26px;
+  margin-bottom: 6px;
+  text-align: center;
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--glow);
+}
+
+.section p {
+  text-align: center;
+  font-size: 14px;
+  color: var(--sub);
+}
+
+/* ------------------------------------------------------
+   SERVICE CARDS
+-------------------------------------------------------*/
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 18px var(--glow);
+  transition: .30s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px var(--glow);
+}
+
+.card .icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------
+   ACCORDION (CSC Services)
+-------------------------------------------------------*/
+
+.accordion {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: var(--radius);
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: "Rajdhani";
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-arrow {
+  transition: .35s;
+}
+
+.accordion.active .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--card);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  transition: .40s ease;
+}
+
+.panel ul {
+  padding: 14px;
+  margin: 0;
+  list-style: none;
+}
+
+.panel ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+}
+
+/* ------------------------------------------------------
+   CONTACT FORM BASE (Part 4 me complete logic)
+-------------------------------------------------------*/
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--glow);
+  outline: none;
+}
+
+textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+/* FULL-WIDTH FORM fluid responsive fix */
+@media (min-width: 900px) {
+  form {
+    max-width: 520px;
+    margin:auto;
+  }
+}
+
+/* DROPDOWN */
+.icon-dropdown {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.dropdown-list {
+  display: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 6px;
+  background: var(--card);
+}
+
+.dropdown-item {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: var(--border);
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 0 18px var(--glow);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 28px var(--glow);
+}
+
+</style>
+
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="top-bar">
-      <div class="brand">
-        <!-- yahan apna logo rakho: assets/logo.png -->
-        <img src="https://img.jarmod.com/img/j7E8yXvCd4.png" alt="Kuldeep Rai Digital Services Logo" class="logo">
-        <div class="brand-text">
-          <h1>Kuldeep Rai Digital Services</h1>
-          <span>Baurbyas, Mehdawal, S.K. Nagar – 272154</span>
-        </div>
-      </div>
-      <div class="contact-mini">
-        <strong>Helpline: +91 9555158536</strong>
-        <span>Email: kuldeeprai75220@gmail.com</span>
-      </div>
+<script>
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+}
+</script>
+
+
+<!-- ============================
+      HEADER SECTION
+============================= -->
+<!-- PERFECT RESPONSIVE HEADER -->
+<header class="header">
+
+  <div class="header-left">
+    <img src="https://img.jarmod.com/img/j7E8yXvCd4.png" class="logo">
+
+    <div class="brand-text">
+      <h1>Kuldeep Rai Digital Services</h1>
+      <p>Baurbyas • Mehdawal • S.K. Nagar</p>
+    </div>
+  </div>
+
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <div class="theme-ball"></div>
+  </div>
+
+</header>
+
+<nav class="nav">
+  <a href="#services">Services</a>
+  <a href="#csc">CSC</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+  <a href="#map">Location</a>
+</nav>
+  <!-- RIGHT: THEME TOGGLE -->
+
+  </div>
+
+</header>
+
+
+
+
+
+<!-- ============================
+       HERO SECTION
+============================= -->
+<section class="hero">
+
+  <div>
+    <h1>Fast • Trusted • Digital Services</h1>
+
+    <p>
+      Online Form • CSC Services • PM Kisan • Aadhaar • Pension • Scholarship  
+      — sabka kaam yahan quick aur professional tareeke se hota hai.
+    </p>
+
+    <button class="btn" style="max-width:220px;">
+      📞 Contact Now
+    </button>
+  </div>
+
+  <img src="https://img.jarmod.com/img/37zfSRvcZe.png"
+       alt="Digital Service Banner">
+
+</section>
+<!-- ============================
+        MAIN SERVICES
+============================= -->
+<section class="section" id="services">
+
+  <h2>Hamare Digital Services</h2>
+  <p>Sabhi online aur government kaam yahan asaan tareeke se.</p>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Online Form Fill-up</h3>
+      <p>Exam, Yojana, College, Registration – sabka work complete support.</p>
     </div>
 
-    <!-- NAVBAR -->
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a href="#map">Location</a>
-    </nav>
-
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-text">
-        <h2>Fast, Trusted &amp; Hassle-Free Digital Seva</h2>
-        <p>
-          Sabhi government &amp; online forms ek hi jagah. Scholarship, old-age pension, PM Samman Nidhi
-          aur bahut kuch – sab ka kaam sahi tareeke se, time par.
-        </p>
-
-        <div class="hero-tags">
-          <span>Online Form Fill-up</span>
-          <span>Scholarship (Fresh / Renewal)</span>
-          <span>Old-Age Pension</span>
-          <span>PM Samman Nidhi</span>
-        </div>
-
-        <div class="hero-cta">
-          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-            📞 Abhi Contact Karein
-          </button>
-          <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-            👀 Saare Services Dekhein
-          </button>
-        </div>
-      </div>
-
-      <div class="hero-banner">
-        <!-- yahan wide banner rakho: assets/banner.png -->
-        <img src="https://img.jarmod.com/img/37zfSRvcZe.png" alt="Digital Services Banner">
-      </div>
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>Scholarship Service</h3>
+      <p>UP / National Scholarship (Fresh & Renewal) 100% assistance.</p>
     </div>
-  </header>
 
-  <main>
-    <!-- SERVICES SECTION -->
-    <section id="services">
-      <div class="section-heading">
-        <h2>Hamare Digital Services</h2>
-        <p>Roz-marra ke sabhi online kaam ek hi counter par.</p>
-      </div>
+    <div class="card">
+      <div class="icon">👴</div>
+      <h3>Pension Yojana</h3>
+      <p>Vridha, Vidhwa, Divyang pension apply/update process.</p>
+    </div>
 
-      <div class="services-grid">
-        <article class="service-card reveal">
-          <div class="service-icon">📄</div>
-          <h3>Online Form Fill-up</h3>
-          <p>Scholarship, exam, yojana, admission, registration – har tarah ke government &amp; private online forms.</p>
-          <div class="service-badge">✔️ Form check karke submit</div>
-        </article>
+    <div class="card">
+      <div class="icon">🌾</div>
+      <h3>PM Kisan / EKYC</h3>
+      <p>Kisan registration, EKYC, land mapping, installment tracking.</p>
+    </div>
 
-        <article class="service-card reveal">
-          <div class="service-icon">🎓</div>
-          <h3>Scholarship Service</h3>
-          <p>UP / National scholarship, fresh &amp; renewal, document upload, correction support aur status tracking.</p>
-          <div class="service-badge">📌 Student special help</div>
-        </article>
+  </div>
+</section>
 
-        <article class="service-card reveal">
-          <div class="service-icon">👴</div>
-          <h3>Old-Age Pension</h3>
-          <p>Vriddha pension, vidhwa pension, divyang pension – online registration, update aur verification support.</p>
-          <div class="service-badge">🤝 Respect &amp; priority</div>
-        </article>
 
-        <article class="service-card reveal">
-          <div class="service-icon">🌾</div>
-          <h3>PM Kisan / Samman Nidhi</h3>
-          <p>Kisan registration, e-KYC, land record mapping, status check aur installment related madad.</p>
-          <div class="service-badge">🌱 Kisan friendly desk</div>
-        </article>
-      </div>
 
-      <!-- Illustration (4 service cards wali image) -->
-      <div class="services-illustration" style="margin-top:26px;">
-        <!-- yahan 4-cards wali image lagao: assets/services-main.png -->
-        <img src="https://img.jarmod.com/img/bTTAib43Bp.png" alt="Services Illustration">
-      </div>
-    </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" style="margin-top:60px;">
-      <div class="section-heading">
-        <h2>Gallery &amp; Visuals</h2>
-        <p>Shop banner, service icons aur branding visuals ek jagah.</p>
-      </div>
 
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <!-- 4 service boxes wala illustration -->
-          <img src="https://img.jarmod.com/img/LJb5-KKrZZ.png" alt="Service Highlights">
-          <span class="gallery-label">Main Services</span>
-        </div>
+<!-- ============================
+       CSC SERVICES ACCORDION
+============================= -->
+<section class="section" id="csc">
 
-        <div class="gallery-item">
-          <!-- icons set 1 -->
-          <img src="https://img.jarmod.com/img/-xwqKWlWiG.png" alt="Digital Icons">
-          <span class="gallery-label">Digital Icons</span>
-        </div>
+  <h2>CSC Center Ke Saare Services</h2>
+  <p>Ek hi click me poora list dekh sakte hain.</p>
 
-        <div class="gallery-item">
-          <!-- icons set 2 / hover neon style -->
-          <img src="https://img.jarmod.com/img/G5CMbdy5P9.png" alt="Neon Icons">
-          <span class="gallery-label">Highlight Icons</span>
-        </div>
+  <!-- ACCORDION BUTTON -->
+  <div class="accordion">
+    All CSC Services
+    <span class="accordion-arrow">⌄</span>
+  </div>
 
-        <div class="gallery-item">
-          <!-- hero banner ko bhi gallery me dikhaya -->
-          <img src="https://img.jarmod.com/img/UGDMGzHOGO.png" alt="Shop Banner">
-          <span class="gallery-label">Shop Banner</span>
-        </div>
-      </div>
-    </section>
+  <!-- COLLAPSIBLE PANEL -->
+  <div class="panel">
+    <ul>
+      <li>✔ PAN Card Apply / Correction</li>
+      <li>✔ Aadhaar Update (Mobile/DOB/Address)</li>
+      <li>✔ Ayushman Card</li>
+      <li>✔ E-Shram Card</li>
+      <li>✔ Income Certificate</li>
+      <li>✔ Caste Certificate</li>
+      <li>✔ Domicile Certificate</li>
+      <li>✔ Birth Certificate</li>
+      <li>✔ Death Certificate</li>
+      <li>✔ Ration Card Apply / Update</li>
+      <li>✔ Voter ID Apply / Correction</li>
+      <li>✔ PM Kisan Registration</li>
+      <li>✔ EKYC All Yojana</li>
+      <li>✔ Gas Subsidy Link</li>
+      <li>✔ Mobile–Aadhaar Linking</li>
+      <li>✔ College Admission Forms</li>
+      <li>✔ Exam Form: SSC / Railway / UPSSSC</li>
+      <li>✔ DigiLocker Account Setup</li>
+      <li>✔ Land Record / Khatauni</li>
+      <li>✔ Driving License Apply</li>
+      <li>✔ Police Verification</li>
+      <li>✔ Labour Card Apply</li>
+      <li>✔ Online Complaint Forms</li>
+      <li>✔ Passport Apply (Help)</li>
+      <li>✔ Bank Account Assistance</li>
+      <li>✔ and more…</li>
+    </ul>
+  </div>
 
-        <!-- MAP -->
-        <div class="map-card" id="map">
-          <!-- yahan apna exact Google Maps iframe paste kar sakte ho -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.329608925865!2d83.0921655!3d27.051342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996cd00081938a1%3A0x63f25aaf219d4219!2sKuldeep%20Rai!5e0!3m2!1sen!2sin!4v1763266617692!5m2!1sen!2sin"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
+</section>
 
-  <!-- SCROLL TO TOP BUTTON -->
-  <button id="scrollTopBtn" aria-label="Scroll to top" title="Top">
-    ↑
-  </button>
 
-  <!-- SIMPLE JS FOR ANIMATION & SCROLL -->
-  <script>
-    // Scroll-to-top button show/hide
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 260) {
-        scrollBtn.classList.add('show');
-      } else {
-        scrollBtn.classList.remove('show');
-      }
-    });
 
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
 
-    // Reveal animation for service cards
-    const revealEls = document.querySelectorAll('.service-card');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
+<!-- ============================
+            GALLERY
+============================= -->
+<section class="section" id="gallery">
 
-    revealEls.forEach(el => observer.observe(el));
+  <h2>Gallery & Branding</h2>
+  <p>Brand banners, icons aur visuals.</p>
 
-    // Demo form submit
-    function handleForm(e) {
-      e.preventDefault();
-      alert("Form demo ke liye hai.\nGitHub par host karne ke baad ise Google Form / WhatsApp link se connect kiya ja sakta hai.");
-      e.target.reset();
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Main Services Banner</h3>
+      <img src="https://img.jarmod.com/img/bTTAib43Bp.png"
+           style="width:100%; border-radius:var(--radius); margin-top:10px;">
+    </div>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>Digital Icons</h3>
+      <img src="https://img.jarmod.com/img/-xwqKWlWiG.png"
+           style="width:100%; border-radius:var(--radius); margin-top:10px;">
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>Neon Icons</h3>
+      <img src="https://img.jarmod.com/img/G5CMbdy5P9.png"
+           style="width:100%; border-radius:var(--radius); margin-top:10px;">
+    </div>
+
+    <div class="card">
+      <div class="icon">🏪</div>
+      <h3>Shop Banner</h3>
+      <img src="https://img.jarmod.com/img/UGDMGzHOGO.png"
+           style="width:100%; border-radius:var(--radius); margin-top:10px;">
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ============================
+              MAP
+============================= -->
+<section class="section" id="map">
+
+  <h2>Location</h2>
+  <p>Dukaan ka exact location neeche diya gaya hai.</p>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.329608925865!2d83.0921655!3d27.051342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996cd00081938a1%3A0x63f25aaf219d4219!2sKuldeep%20Rai!5e0!3m2!1sen!2sin!4v1763266617692!5m2!1sen!2sin"
+    width="100%"
+    height="330"
+    style="border:0; border-radius:var(--radius); box-shadow:0 0 22px var(--glow);"
+    loading="lazy">
+  </iframe>
+
+</section>
+<!-- ============================
+        CONTACT FORM
+============================= -->
+<section class="section" id="contact">
+
+  <h2>Contact Form</h2>
+  <p>Form submit karte hi WhatsApp par message direct chala jayega.</p>
+
+  <form id="contactForm" onsubmit="submitWhatsApp(event)">
+
+    <!-- NAME -->
+    <input id="name" placeholder="Aapka Naam" required>
+
+    <!-- PHONE -->
+    <input id="phone" placeholder="Mobile Number" required>
+
+    <!-- SERVICE DROPDOWN -->
+    <div class="icon-dropdown" onclick="toggleDropdown()">
+      📋 Kaam select kare
+    </div>
+
+    <div class="dropdown-list" id="drop">
+      <div class="dropdown-item" onclick="selectService('Online Form Fill-up')">Online Form Fill-up</div>
+      <div class="dropdown-item" onclick="selectService('Scholarship Form')">Scholarship Form</div>
+      <div class="dropdown-item" onclick="selectService('Pension Yojana')">Pension Yojana</div>
+      <div class="dropdown-item" onclick="selectService('PM Kisan Samman Nidhi')">PM Kisan Samman Nidhi</div>
+      <div class="dropdown-item" onclick="selectService('Aadhaar / PAN / Banking Service')">Aadhaar / PAN / Banking</div>
+      <div class="dropdown-item" onclick="selectService('Other')">Other</div>
+    </div>
+
+    <!-- OTHER SERVICE INPUT -->
+    <input id="otherService" placeholder="Kaam ka naam likhe" style="display:none;">
+
+    <!-- MESSAGE TEXTAREA -->
+    <textarea id="msg" placeholder="Extra details (optional)" oninput="autoExpand(this)"></textarea>
+
+    <!-- SUBMIT BUTTON -->
+    <button class="btn">
+      📩 WhatsApp par bheje
+    </button>
+
+  </form>
+
+</section>
+
+
+
+
+
+<!-- ============================
+            FOOTER
+============================= -->
+<footer style="text-align:center; padding:18px; margin-top:30px; color:var(--sub);">
+  © 2025 — Kuldeep Rai Digital Services • All Rights Reserved
+</footer>
+
+
+
+
+
+<!-- ============================
+      JAVASCRIPT FUNCTIONS
+============================= -->
+<script>
+
+let selectedService = "";
+
+/* -------------------------------------
+   DROPDOWN (OPEN/CLOSE)
+--------------------------------------*/
+function toggleDropdown() {
+  const drop = document.getElementById("drop");
+  drop.style.display = drop.style.display === "block" ? "none" : "block";
+}
+
+/* -------------------------------------
+   SERVICE SELECTED
+--------------------------------------*/
+function selectService(service) {
+  selectedService = service;
+  document.querySelector(".icon-dropdown").innerHTML = "📌 " + service;
+  document.getElementById("drop").style.display = "none";
+
+  // SHOW EXTRA BOX IF "OTHER"
+  document.getElementById("otherService").style.display =
+    service === "Other" ? "block" : "none";
+}
+
+/* -------------------------------------
+   AUTO EXPAND TEXTAREA
+--------------------------------------*/
+function autoExpand(el) {
+  el.style.height = "auto";
+  el.style.height = el.scrollHeight + "px";
+}
+
+/* -------------------------------------
+   WHATSAPP MESSAGE SENDER
+--------------------------------------*/
+function submitWhatsApp(event) {
+  event.preventDefault();
+
+  const name  = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const msg   = document.getElementById("msg").value;
+  const other = document.getElementById("otherService").value;
+
+  let service = selectedService === "Other" ? other : selectedService;
+
+  if (!service) {
+    alert("Kripya ek service select kare.");
+    return;
+  }
+
+  const text =
+    "Namaste,%0A" +
+    "👤 Naam: " + name + "%0A" +
+    "📞 Mobile: " + phone + "%0A" +
+    "📝 Kaam: " + service + "%0A" +
+    "✉ Details: " + (msg || "-");
+
+  window.open("https://wa.me/919555158536?text=" + text, "_blank");
+}
+
+/* -------------------------------------
+   ACCORDION (CSC SERVICES)
+--------------------------------------*/
+let acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+
+    this.classList.toggle("active");
+
+    let arrow = this.querySelector(".accordion-arrow");
+    arrow.style.transform =
+      arrow.style.transform === "rotate(180deg)"
+      ? "rotate(0deg)" : "rotate(180deg)";
+
+    let panel = this.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
     }
-  
+
+  });
+}
+
+/* -------------------------------------
+   THEME TOGGLE (LIGHT <-> DARK)
+--------------------------------------*/
+function toggleTheme() {
+  document.body.classList.toggle("light");
+
+  if (document.body.classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.removeItem("theme");
+  }
+}
+
+</script>
+
 </body>
 </html>
